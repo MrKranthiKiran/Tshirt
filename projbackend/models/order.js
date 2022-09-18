@@ -1,5 +1,5 @@
-import mongoose from 'mongoose';
-
+// import mongoose from 'mongoose';
+const mongoose = require('mongoose');
 const {ObjectId} = mongoose.Schema;
 
 const ProductCartSchema = new mongoose.Schema({
@@ -15,7 +15,7 @@ const ProductCartSchema = new mongoose.Schema({
 
 const ProductCart = mongoose.model("ProductCart", ProductCartSchema);
 
-const orderScehma = new mongoose.Schema({
+const OrderScehma = new mongoose.Schema({
     products: [ProductCartSchema],
     transaction_id : {},
     amount: {
@@ -30,7 +30,7 @@ const orderScehma = new mongoose.Schema({
 }, 
 { timestamps: true});
 
-const Order = mongoose.model("Order",OrderSchema);
+const Order = mongoose.model("Order", OrderScehma);
 
 module.exports = {Order, ProductCart}
 
