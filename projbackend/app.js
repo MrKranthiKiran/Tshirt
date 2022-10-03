@@ -12,6 +12,7 @@ const cors = require("cors");
 
 const authRoutes = require("./routes/auth");
 const userRoutes = require("./routes/user");
+const categoryRoutes = require("./routes/category");
 
 //DB Connection
 
@@ -33,6 +34,7 @@ app.use(cors());
 
 app.use("/api", authRoutes);
 app.use("/api", userRoutes);
+app.use("/api", categoryRoutes)
 
 //Port
 const port = 3000;
